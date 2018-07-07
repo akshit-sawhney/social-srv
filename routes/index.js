@@ -64,7 +64,6 @@ function testRPCs(srv) {
       if (response && response.success) {
         resolve({ service_name: srv, success: true });
       } else {
-        console.log(err);
         resolve({ service_name: srv, success: false, err: err.toString() });
       }
     });

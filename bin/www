@@ -1,5 +1,6 @@
 const app = require('../app');
 const http = require('http');
+const socket = require("../socket");
 
 function normalizePort(val) {
   const port = parseInt(val, 10);
@@ -19,6 +20,7 @@ function normalizePort(val) {
 const server = http.createServer(app);
 const port = normalizePort(process.env.PORT || '3000');
 app.set('port', port);
+socket.run(server, port);
 server.listen(port);
 
 function onError(error) {
@@ -45,7 +47,6 @@ function onError(error) {
 function onListening() {
   const addr = server.address();
   const bind = typeof addr === `string` ? `pipe${addr}` : `port ${addr.port}`;
-  console.log(`Listening on ${bind}`);
 }
 
 server.on('error', onError);

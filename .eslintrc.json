@@ -22,6 +22,11 @@
     "no-console": "off",
     "global-require": "warn",
     "object-shorthand": "off",
-    "no-restricted-globals": "off"
+    "no-restricted-globals": "off",
+    "no-else-return": "off",
+    "no-labels": "off",
+    "no-restricted-syntax": "off",
+    "guard-for-in": "off",
+    "prefer-destructuring": "off"
   }
 }
